@@ -3,19 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nur.url = "github:TonyWu20/NUR";
+    tonywu20.url = "github:TonyWu20/nur-packages";
     castep.url = "git+ssh://git@github.com/TonyWu20/CASTEP-25.12-nixos";
   };
 
-  outputs = inputs@{ self, nixpkgs, nur, castep, ... }:
+  outputs = { nixpkgs, tonywu20, castep, ... }:
     let
       system = "x86_64-linux";
-      overlays = [ nur.overlays.default castep.overlays.default ];
+      overlays = [ castep.overlays.default ];
       pkgs = import nixpkgs {
         config.allowUnfree = true;
         inherit system overlays;
       };
-      intel-oneapi = pkgs.nur.repos.tonywu20.intel-oneapi-hpc;
+      intel-oneapi = tonywu20.packages.${system}.intel-oneapi-hpc;
     in
     {
       devShells.${system} = {
@@ -27,6 +27,7 @@
           ];
           shellHook = ''
             source ${intel-oneapi}/setvars.sh
+            export INTEL=${intel-oneapi}
             exec fish
           '';
         };
