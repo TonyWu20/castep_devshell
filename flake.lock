@@ -1,28 +1,9 @@
 {
   "nodes": {
-    "castep": {
+    "castep_25_aocl": {
       "inputs": {
         "nixpkgs": "nixpkgs",
         "tonywu20": "tonywu20"
-      },
-      "locked": {
-        "lastModified": 1750163595,
-        "narHash": "sha256-KU9sZDPdJelGJKiyXrB6+iCKkUjJlTSF1DqmenJY0ic=",
-        "ref": "refs/heads/main",
-        "rev": "f659125564af53252f9f273787f3d0f5fbe77d8a",
-        "revCount": 15,
-        "type": "git",
-        "url": "ssh://git@github.com/TonyWu20/CASTEP-25.12-nixos"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/TonyWu20/CASTEP-25.12-nixos"
-      }
-    },
-    "castep_aocl": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_3",
-        "tonywu20": "tonywu20_2"
       },
       "locked": {
         "lastModified": 1750162766,
@@ -37,6 +18,44 @@
         "ref": "amd",
         "type": "git",
         "url": "ssh://git@github.com/TonyWu20/CASTEP-25.12-nixos"
+      }
+    },
+    "castep_25_mkl": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3",
+        "tonywu20": "tonywu20_2"
+      },
+      "locked": {
+        "lastModified": 1750165331,
+        "narHash": "sha256-hy9wVQbVt1Lf1BrFWinyE8BhGIJKRdFlXRFnaW9E8oc=",
+        "ref": "refs/heads/main",
+        "rev": "28e596895c74893ca67e31c28a6261a7d82cc9a6",
+        "revCount": 16,
+        "type": "git",
+        "url": "ssh://git@github.com/TonyWu20/CASTEP-25.12-nixos"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/TonyWu20/CASTEP-25.12-nixos"
+      }
+    },
+    "castep_611_custom": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_5",
+        "tonywu20": "tonywu20_3"
+      },
+      "locked": {
+        "lastModified": 1750324950,
+        "narHash": "sha256-NJMZFpt1aTYoUT3l+bV26xBHqyzA5F1QUscI1JfFb0s=",
+        "ref": "refs/heads/main",
+        "rev": "c6be8729aa4ddd4331b0ef6667e4b19f8bd97b08",
+        "revCount": 18,
+        "type": "git",
+        "url": "ssh://git@github.com/TonyWu20/CASTEP-6.11-nixos-customized"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/TonyWu20/CASTEP-6.11-nixos-customized"
       }
     },
     "nixpkgs": {
@@ -135,12 +154,45 @@
         "type": "github"
       }
     },
+    "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1749285348,
+        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_8": {
+      "locked": {
+        "lastModified": 1749794982,
+        "narHash": "sha256-Kh9K4taXbVuaLC0IL+9HcfvxsSUx8dPB5s5weJcc9pc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "castep": "castep",
-        "castep_aocl": "castep_aocl",
-        "nixpkgs": "nixpkgs_5",
-        "tonywu20": "tonywu20_3"
+        "castep_25_aocl": "castep_25_aocl",
+        "castep_25_mkl": "castep_25_mkl",
+        "castep_611_custom": "castep_611_custom",
+        "nixpkgs": "nixpkgs_7",
+        "tonywu20": "tonywu20_4"
       }
     },
     "tonywu20": {
@@ -182,6 +234,24 @@
     "tonywu20_3": {
       "inputs": {
         "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1750130591,
+        "narHash": "sha256-pQk9v7lLDas9+dMBwNZ/DZa6DmFGBWKiSZmNKGAIVt8=",
+        "owner": "TonyWu20",
+        "repo": "nur-packages",
+        "rev": "0afd02c7a7c7e7c4a520b018529ef136da374585",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TonyWu20",
+        "repo": "nur-packages",
+        "type": "github"
+      }
+    },
+    "tonywu20_4": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_8"
       },
       "locked": {
         "lastModified": 1750130591,
