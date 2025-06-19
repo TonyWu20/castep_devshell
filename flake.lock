@@ -45,11 +45,11 @@
         "tonywu20": "tonywu20_3"
       },
       "locked": {
-        "lastModified": 1750324950,
-        "narHash": "sha256-NJMZFpt1aTYoUT3l+bV26xBHqyzA5F1QUscI1JfFb0s=",
+        "lastModified": 1750334379,
+        "narHash": "sha256-CnsCRE9xz6jdPdiHv/JPY172mHltKZPHg2KIrfYwfYs=",
         "ref": "refs/heads/main",
-        "rev": "c6be8729aa4ddd4331b0ef6667e4b19f8bd97b08",
-        "revCount": 18,
+        "rev": "0c1ed8ba4dc8f424982c409457b825e32deea4a9",
+        "revCount": 21,
         "type": "git",
         "url": "ssh://git@github.com/TonyWu20/CASTEP-6.11-nixos-customized"
       },
@@ -124,11 +124,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1749285348,
-        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "lastModified": 1750134718,
+        "narHash": "sha256-v263g4GbxXv87hMXMCpjkIxd/viIF7p3JpJrwgKdNiI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "rev": "9e83b64f727c88a7711a2c463a7b16eedb69a84c",
         "type": "github"
       },
       "original": {
