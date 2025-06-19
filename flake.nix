@@ -83,6 +83,7 @@
             ''
               export AOCL_HOME=${aocl}
               export LD_LIBRARY_PATH=${aocl}/${aocl.version}/${aocl.compiler}/lib:$LD_LIBRARY_PATH
+              export PATH=${pkgs.castep_611_aocl}/bin:$PATH
               echo "With ${aocl.name} + ${pkgs.castep_611_aocl.pname}"
               export OMP_NUM_THREADS=1
               export BLIS_NUM_THREADS=1
