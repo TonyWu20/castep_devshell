@@ -60,11 +60,17 @@
             intel-oneapi
             stdenv
             castep_611_mkl
+            gnumake
+          ];
+          inputsFrom = with pkgs; [
+            intel-oneapi
+            castep_611_mkl
           ];
           shellHook = ''
             source ${intel-oneapi}/setvars.sh
             export INTEL=${intel-oneapi}
-            exec fish
+            export PATH=${pkgs.gnumake}/bin:${pkgs.castep_611_mkl}/${pkgs.castep_611_mkl.arch}/bin:$PATH
+            export OMP_NUM_THREADS=1
           '';
 
         };
