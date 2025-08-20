@@ -29,10 +29,13 @@
             stdenv
             castep_25_12
           ];
+          env = {
+            OMP_NUM_THREADS = 1;
+            INTEL = intel-oneapi;
+            PATH = "${pkgs.gnumake}/bin:${pkgs.castep_611_mkl}/${pkgs.castep_611_mkl.arch}/bin:$PATH";
+          };
           shellHook = ''
             source ${intel-oneapi}/setvars.sh
-            export INTEL=${intel-oneapi}
-            exec fish
           '';
         };
         castep_25_aocl = pkgs.mkShell {
@@ -46,12 +49,15 @@
             castep_25_12
             aocl
           ];
+          env = {
+            OMP_NUM_THREADS = 1;
+            BLIS_NUM_THREADS = 1;
+            AOCL_HOME = aocl;
+            LD_LIBRARY_PATH = "${aocl}/${aocl.version}/${aocl.compiler}/lib:$LD_LIBRARY_PATH";
+          };
           shellHook =
             ''
-              export AOCL_HOME=${aocl}
-              export LD_LIBRARY_PATH=${aocl}/${aocl.version}/${aocl.compiler}/lib:$LD_LIBRARY_PATH
               echo "With ${aocl.name} + ${pkgs.castep_25_12.pname}"
-              exec fish
             '';
         };
         castep_6_mkl = pkgs.mkShell {
@@ -66,11 +72,13 @@
             intel-oneapi
             castep_611_mkl
           ];
+          env = {
+            OMP_NUM_THREADS = 1;
+            INTEL = intel-oneapi;
+            PATH = "${pkgs.gnumake}/bin:${pkgs.castep_611_mkl}/${pkgs.castep_611_mkl.arch}/bin:$PATH";
+          };
           shellHook = ''
             source ${intel-oneapi}/setvars.sh
-            export INTEL=${intel-oneapi}
-            export PATH=${pkgs.gnumake}/bin:${pkgs.castep_611_mkl}/${pkgs.castep_611_mkl.arch}/bin:$PATH
-            export OMP_NUM_THREADS=1
           '';
 
         };
@@ -85,15 +93,16 @@
             aocl
             castep_611_aocl
           ];
+          env = {
+            OMP_NUM_THREADS = 1;
+            BLIS_NUM_THREADS = 1;
+            AOCL_HOME = aocl;
+            LD_LIBRARY_PATH = "${aocl}/${aocl.version}/${aocl.compiler}/lib:$LD_LIBRARY_PATH";
+            PATH = "${pkgs.castep_611_aocl}/${pkgs.castep_611_aocl.arch}/bin:$PATH";
+          };
           shellHook =
             ''
-              export AOCL_HOME=${aocl}
-              export LD_LIBRARY_PATH=${aocl}/${aocl.version}/${aocl.compiler}/lib:$LD_LIBRARY_PATH
-              export PATH=${pkgs.castep_611_aocl}/${pkgs.castep_611_aocl.arch}/bin:$PATH
               echo "With ${aocl.name} + ${pkgs.castep_611_aocl.pname}"
-              export OMP_NUM_THREADS=1
-              export BLIS_NUM_THREADS=1
-              exec fish
             '';
         };
       };
